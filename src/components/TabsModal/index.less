@@ -1,0 +1,20 @@
+.tab-modal-step-wrapper {
+  &.ant-steps {
+    margin-top: 16px;
+  }
+  .ant-steps-item {
+    flex: unset;
+    overflow: unset;
+    cursor: pointer;
+    .ant-steps-item-title::after {
+      content: '>';
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      color: black;
+      background-color: unset !important;
+    }
+  }
+}
