@@ -163,27 +163,25 @@ const ManualBackup = () => {
     return [
       {
         title: '基本配置',
-        render: () =>
-          React.memo(() => (
-            <BaseForm
-              ref={(ref) => (baseForm.current = ref?.form)}
-              instanceSelectData={instanceSelectData}
-              backupToolChange={backupToolChange}
-            />
-          )),
+        render: () => (
+          <BaseForm
+            ref={(ref) => (baseForm.current = ref?.form)}
+            instanceSelectData={instanceSelectData}
+            backupToolChange={backupToolChange}
+          />
+        ),
       },
       {
         title: '备份配置',
         hasError: backupConfigHasError,
-        render: () =>
-          React.memo(() => (
-            <BackupConfigForm
-              ref={(ref) => (backupConfigForm.current = ref)}
-              // form={backupConfigForm} // ====replace content====
-              // index={index}// ====replace content====
-              backupTool={backupTool}
-            />
-          )),
+        render: () => (
+          <BackupConfigForm
+            ref={(ref) => (backupConfigForm.current = ref)}
+            // form={backupConfigForm} // ====replace content====
+            // index={index}// ====replace content====
+            backupTool={backupTool}
+          />
+        ),
         callBack: () => {
           backupConfigForm.current?.updateBackupCnf();
         },
